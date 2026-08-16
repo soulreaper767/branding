@@ -9,13 +9,14 @@
   "enabled",
   "app_name",
   "new_title",
+  "new_logo_url",
   "last_synced_status"
  ],
  "fields": [
   {
    "fieldname": "info_html",
    "fieldtype": "HTML",
-   "options": "<div style=\"font-size: 12px; color: var(--text-muted); line-height: 1.6;\">Rewrites the literal <code>app_title = \"...\"</code> line inside that app's own <code>hooks.py</code> file, on the server's filesystem - not a Translation record. Applies the moment you save, and re-applies automatically after every <code>bench migrate</code> (so a <code>bench update</code> that resets these files gets fixed again on the next migrate, no extra step needed). Only that one line is ever touched - <b>App Name</b> (the internal Python/import identifier every doctype, permission and module reference depends on) is never modified.</div>"
+   "options": "<div style=\"font-size: 12px; color: var(--text-muted); line-height: 1.6;\">Rewrites the literal <code>app_title = \"...\"</code> and (if given) <code>app_logo_url = \"...\"</code> lines inside that app's own <code>hooks.py</code> file, on the server's filesystem - not a Translation record, and not Website Settings (which doesn't drive the app switcher / About screen's per-app logo - this does). Applies the moment you save, and re-applies automatically after every <code>bench migrate</code> (so a <code>bench update</code> that resets these files gets fixed again on the next migrate, no extra step needed). Only those two lines are ever touched - <b>App Name</b> (the internal Python/import identifier every doctype, permission and module reference depends on) is never modified.</div>"
   },
   {
    "default": "1",
@@ -41,6 +42,12 @@
    "in_list_view": 1,
    "label": "New Title",
    "reqd": 1
+  },
+  {
+   "description": "What app_logo_url should read instead - a path served under /assets/..., e.g. /assets/branding/images/tijarat-logo.png. Leave blank to leave the app's logo alone.",
+   "fieldname": "new_logo_url",
+   "fieldtype": "Data",
+   "label": "New Logo URL"
   },
   {
    "fieldname": "last_synced_status",
