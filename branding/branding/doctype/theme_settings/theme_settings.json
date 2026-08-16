@@ -1,0 +1,169 @@
+{
+ "actions": [],
+ "creation": "2026-08-17 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "application_name",
+  "sb_colors",
+  "primary_color",
+  "background_color",
+  "text_color",
+  "cb_colors_1",
+  "border_color",
+  "muted_text_color",
+  "sb_status_colors",
+  "success_color",
+  "warning_color",
+  "cb_status_colors_1",
+  "danger_color",
+  "sb_typography",
+  "font_family",
+  "border_radius",
+  "sb_charts",
+  "chart_intro_html",
+  "chart_colors"
+ ],
+ "fields": [
+  {
+   "default": "1",
+   "description": "Master switch. Turn off to instantly revert to unmodified Frappe/ERPNext styling everywhere - Desk, Kanban boards, charts, and the storefront.",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enable Theme"
+  },
+  {
+   "default": "Tijarat",
+   "description": "Used by any Label Override row referencing {application_name} in its Replace With text (e.g. an \"ERPNext\" → {application_name} rule).",
+   "fieldname": "application_name",
+   "fieldtype": "Data",
+   "label": "Application Name"
+  },
+  {
+   "fieldname": "sb_colors",
+   "fieldtype": "Section Break",
+   "label": "Core Colors"
+  },
+  {
+   "default": "#4f46e5",
+   "description": "Buttons, links, active states - Desk and storefront both.",
+   "fieldname": "primary_color",
+   "fieldtype": "Color",
+   "label": "Primary Color"
+  },
+  {
+   "default": "#f8fafc",
+   "fieldname": "background_color",
+   "fieldtype": "Color",
+   "label": "Page Background"
+  },
+  {
+   "default": "#0f172a",
+   "fieldname": "text_color",
+   "fieldtype": "Color",
+   "label": "Primary Text Color"
+  },
+  {
+   "fieldname": "cb_colors_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "#e2e8f0",
+   "fieldname": "border_color",
+   "fieldtype": "Color",
+   "label": "Border Color"
+  },
+  {
+   "default": "#64748b",
+   "fieldname": "muted_text_color",
+   "fieldtype": "Color",
+   "label": "Muted / Secondary Text"
+  },
+  {
+   "fieldname": "sb_status_colors",
+   "fieldtype": "Section Break",
+   "label": "Status Colors"
+  },
+  {
+   "default": "#047857",
+   "fieldname": "success_color",
+   "fieldtype": "Color",
+   "label": "Success Color"
+  },
+  {
+   "default": "#d97706",
+   "fieldname": "warning_color",
+   "fieldtype": "Color",
+   "label": "Warning Color"
+  },
+  {
+   "fieldname": "cb_status_colors_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "#b91c1c",
+   "fieldname": "danger_color",
+   "fieldtype": "Color",
+   "label": "Danger Color"
+  },
+  {
+   "fieldname": "sb_typography",
+   "fieldtype": "Section Break",
+   "label": "Typography & Shape"
+  },
+  {
+   "default": "Inter",
+   "fieldname": "font_family",
+   "fieldtype": "Select",
+   "label": "Font Family",
+   "options": "Default\nInter\nNoto Sans\nRoboto\nOpen Sans\nSystem UI"
+  },
+  {
+   "default": "Rounded (8px)",
+   "description": "Applied to buttons, cards, product grid images, Kanban cards.",
+   "fieldname": "border_radius",
+   "fieldtype": "Select",
+   "label": "Corner Roundness",
+   "options": "Sharp (0px)\nSubtle (4px)\nRounded (8px)\nPill (999px)"
+  },
+  {
+   "fieldname": "sb_charts",
+   "fieldtype": "Section Break",
+   "label": "Charts & Kanban"
+  },
+  {
+   "fieldname": "chart_intro_html",
+   "fieldtype": "HTML",
+   "options": "<div style=\"font-size: 12px; color: var(--text-muted);\">Used cyclically for chart series colors (bar, line, pie/donut) across Dashboard Charts, report charts and Number Cards, and for Kanban board column accents. Add as many as you like - they repeat in order once you have more series than colors.</div>"
+  },
+  {
+   "fieldname": "chart_colors",
+   "fieldtype": "Table",
+   "label": "Chart Color Palette",
+   "options": "Theme Chart Color"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-08-17 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Branding",
+ "name": "Theme Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

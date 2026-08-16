@@ -1,0 +1,57 @@
+{
+ "charts": [],
+ "content": "[{\"id\": \"br_header\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Branding</b></span>\", \"col\": 12}}, {\"id\": \"br_paragraph\", \"type\": \"paragraph\", \"data\": {\"text\": \"No-code labels, menus, and theme colors - choose what to replace with what, and enable or disable each rule independently.\", \"col\": 12}}, {\"id\": \"br_shortcut_theme\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Theme Settings\", \"col\": 4}}, {\"id\": \"br_shortcut_labels\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Label Override\", \"col\": 4}}, {\"id\": \"br_shortcut_menu\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Menu Override\", \"col\": 4}}]",
+ "creation": "2026-08-17 00:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-swatch",
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "Branding",
+ "links": [],
+ "modified": "2026-08-17 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Branding",
+ "name": "Branding",
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1,
+ "shortcuts": [
+  {
+   "label": "Theme Settings",
+   "link_to": "Theme Settings",
+   "type": "DocType",
+   "color": "Grey",
+   "format": "",
+   "doc_view": "",
+   "stats_filter": "{}",
+   "icon": "settings"
+  },
+  {
+   "label": "Label Override",
+   "link_to": "Label Override",
+   "type": "DocType",
+   "color": "Grey",
+   "format": "",
+   "doc_view": "",
+   "stats_filter": "{}",
+   "icon": "edit"
+  },
+  {
+   "label": "Menu Override",
+   "link_to": "Menu Override",
+   "type": "DocType",
+   "color": "Grey",
+   "format": "",
+   "doc_view": "",
+   "stats_filter": "{}",
+   "icon": "list"
+  }
+ ],
+ "title": "Branding"
+}

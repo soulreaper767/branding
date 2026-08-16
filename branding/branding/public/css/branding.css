@@ -1,0 +1,174 @@
+/* branding: Desk-wide theme stylesheet. Reads the --brand-* custom
+   properties set by branding.js at runtime; fallback values baked into
+   each var() call match Theme Settings' own field defaults, so styling
+   is correct even before JS finishes running.
+
+   Deliberately light-mode only, no separate sidebar/navbar color fields,
+   no login page customization, no hidden-module/help-menu toggles - see
+   the app's own checklist for what's out of scope vs. a full ERPNext
+   redesign app. */
+
+:root {
+	--brand-primary: #4f46e5;
+	--brand-bg: #f8fafc;
+	--brand-text: #0f172a;
+	--brand-border: #e2e8f0;
+	--brand-muted: #64748b;
+	--brand-success: #047857;
+	--brand-warning: #d97706;
+	--brand-danger: #b91c1c;
+	--brand-radius: 8px;
+	--brand-font: "Inter", sans-serif;
+	--brand-hover-bg: #f1f5f9;
+}
+
+/* Frappe's own theme variables, remapped so native components (buttons,
+   cards, indicators) pick up the brand colors without every single one
+   needing an explicit override below. Harmless no-op for any name a
+   given Frappe release doesn't actually consume. */
+html[data-branding-theme="on"] {
+	--bg-color: var(--brand-bg);
+	--text-color: var(--brand-text);
+	--primary: var(--brand-primary);
+	--primary-color: var(--brand-primary);
+	--dt-primary-color: var(--brand-primary);
+}
+
+html[data-branding-theme="on"] body {
+	background-color: var(--brand-bg);
+	color: var(--brand-text);
+	font-family: var(--brand-font);
+}
+
+html[data-branding-theme="on"] .navbar,
+html[data-branding-theme="on"] .navbar.navbar-default {
+	background-color: #ffffff !important;
+	color: var(--brand-text) !important;
+	border-bottom: 1px solid var(--brand-border);
+}
+html[data-branding-theme="on"] .navbar a,
+html[data-branding-theme="on"] .navbar .navbar-brand {
+	color: var(--brand-text) !important;
+}
+html[data-branding-theme="on"] .navbar button:hover,
+html[data-branding-theme="on"] .navbar .icon-btn:hover,
+html[data-branding-theme="on"] .navbar .btn:hover {
+	background-color: var(--brand-hover-bg);
+}
+
+html[data-branding-theme="on"] .body-sidebar,
+html[data-branding-theme="on"] .desk-sidebar,
+html[data-branding-theme="on"] .standard-sidebar,
+html[data-branding-theme="on"] .workspace-sidebar,
+html[data-branding-theme="on"] [class*="sidebar"] {
+	background-color: #ffffff;
+	color: var(--brand-muted);
+	border-right: 1px solid var(--brand-border);
+}
+html[data-branding-theme="on"] .body-sidebar a,
+html[data-branding-theme="on"] [class*="sidebar"] a {
+	color: var(--brand-muted);
+}
+html[data-branding-theme="on"] .body-sidebar a:hover:not(.selected):not(.active),
+html[data-branding-theme="on"] [class*="sidebar"] a:hover:not(.selected):not(.active) {
+	background-color: var(--brand-hover-bg);
+}
+html[data-branding-theme="on"] .body-sidebar .selected,
+html[data-branding-theme="on"] [class*="sidebar"] .selected {
+	background-color: color-mix(in srgb, var(--brand-primary) 12%, white 88%);
+	color: var(--brand-primary);
+}
+
+html[data-branding-theme="on"] .btn-primary {
+	background-color: var(--brand-primary);
+	border-color: var(--brand-primary);
+}
+html[data-branding-theme="on"] .btn-primary:hover,
+html[data-branding-theme="on"] .btn-primary:active {
+	background-color: color-mix(in srgb, var(--brand-primary) 85%, black 15%);
+	border-color: color-mix(in srgb, var(--brand-primary) 85%, black 15%);
+}
+
+html[data-branding-theme="on"] .indicator-pill.blue,
+html[data-branding-theme="on"] .indicator.blue {
+	background-color: color-mix(in srgb, var(--brand-primary) 15%, white 85%);
+	color: var(--brand-primary);
+}
+html[data-branding-theme="on"] .indicator-pill.green,
+html[data-branding-theme="on"] .indicator.green {
+	background-color: color-mix(in srgb, var(--brand-success) 15%, white 85%);
+	color: var(--brand-success);
+}
+html[data-branding-theme="on"] .indicator-pill.orange,
+html[data-branding-theme="on"] .indicator.orange,
+html[data-branding-theme="on"] .indicator-pill.yellow,
+html[data-branding-theme="on"] .indicator.yellow {
+	background-color: color-mix(in srgb, var(--brand-warning) 15%, white 85%);
+	color: var(--brand-warning);
+}
+html[data-branding-theme="on"] .indicator-pill.red,
+html[data-branding-theme="on"] .indicator.red {
+	background-color: color-mix(in srgb, var(--brand-danger) 15%, white 85%);
+	color: var(--brand-danger);
+}
+
+/* Buttons/cards/badges generally get the configured corner roundness,
+   not just the ones with a specific rule above. */
+html[data-branding-theme="on"] .btn,
+html[data-branding-theme="on"] .card,
+html[data-branding-theme="on"] .widget,
+html[data-branding-theme="on"] .form-control {
+	border-radius: var(--brand-radius) !important;
+}
+
+/* ---------- Kanban board ---------- */
+/* Class names are Frappe's documented ones, kept alongside a broad
+   [class*="kanban"] net as a defensive fallback - harmless if a given
+   Frappe version's markup differs, since it only adds spacing/roundness
+   rather than anything that could break layout. */
+
+html[data-branding-theme="on"] .kanban-column,
+html[data-branding-theme="on"] [class*="kanban-column"] {
+	background-color: var(--brand-bg);
+	border-radius: var(--brand-radius);
+}
+
+html[data-branding-theme="on"] .kanban-column-header,
+html[data-branding-theme="on"] [class*="kanban"][class*="header"] {
+	font-weight: 600;
+	color: var(--brand-text);
+}
+
+html[data-branding-theme="on"] .kanban-card,
+html[data-branding-theme="on"] [class*="kanban-card"] {
+	background-color: #ffffff;
+	border: 1px solid var(--brand-border);
+	border-radius: var(--brand-radius);
+	box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+	transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+html[data-branding-theme="on"] .kanban-card:hover,
+html[data-branding-theme="on"] [class*="kanban-card"]:hover {
+	box-shadow: 0 8px 16px -4px rgba(15, 23, 42, 0.12);
+	transform: translateY(-1px);
+}
+
+/* ---------- Charts ---------- */
+/* frappe-charts (the SVG chart library Dashboard Charts/report charts
+   use) sets bar/line/slice colors via inline JS, not CSS classes, so
+   these variables can't repaint an already-rendered chart the way the
+   rules above repaint native HTML/CSS components. They're exposed here
+   for two things that DO work today: any custom report/page that reads
+   CSS variables directly when building its own chart config, and any
+   future native hook Frappe exposes for a default palette. Each
+   individual Dashboard Chart's own "Color" field (set on the chart
+   itself, Desk > Dashboard Chart) remains the reliable way to color a
+   specific chart right now. */
+:root {
+	--brand-chart-1: #4f46e5;
+	--brand-chart-2: #0ea5e9;
+	--brand-chart-3: #10b981;
+	--brand-chart-4: #f59e0b;
+	--brand-chart-5: #ef4444;
+	--brand-chart-6: #8b5cf6;
+}
