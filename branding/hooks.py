@@ -30,5 +30,11 @@ after_install = "branding.branding.install.after_install"
 # hooks.py, on disk - a `bench update` resets that file back to
 # upstream's own title, so this re-applies every enabled row after every
 # `bench migrate` (which normally follows an update anyway) with no
-# separate manual step required.
-after_migrate = "branding.branding.title_sync.apply_all_app_titles"
+# separate manual step required. apply_navbar_branding (logo + help/user
+# menu links, both native Website Settings/Navbar Settings records) is
+# idempotent and cheap, so it rides along on the same hook in case a
+# Frappe upgrade reseeds a new standard Navbar Item pointing at frappe.io.
+after_migrate = [
+	"branding.branding.title_sync.apply_all_app_titles",
+	"branding.branding.navbar_branding.apply_navbar_branding",
+]

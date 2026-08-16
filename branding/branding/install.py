@@ -65,6 +65,10 @@ def after_install():
 	seed_app_title_overrides()
 	frappe.db.commit()
 
+	from branding.branding.navbar_branding import apply_navbar_branding
+
+	apply_navbar_branding()
+
 
 def seed_label_overrides():
 	"""Normal, editable/deletable starter rows - not enforced, just a

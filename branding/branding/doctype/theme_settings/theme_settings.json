@@ -6,6 +6,10 @@
  "field_order": [
   "enabled",
   "application_name",
+  "sb_branding",
+  "app_logo",
+  "cb_branding_1",
+  "website_url",
   "sb_colors",
   "primary_color",
   "background_color",
@@ -39,6 +43,28 @@
    "fieldname": "application_name",
    "fieldtype": "Data",
    "label": "Application Name"
+  },
+  {
+   "fieldname": "sb_branding",
+   "fieldtype": "Section Break",
+   "label": "Logo & Links"
+  },
+  {
+   "description": "Applied to Website Settings (app logo, favicon, banner, footer logo) and Navbar Settings (Desk top-left logo) - native Frappe fields, not a custom mechanism. Leave blank to keep whatever's already set.",
+   "fieldname": "app_logo",
+   "fieldtype": "Attach Image",
+   "label": "App Logo"
+  },
+  {
+   "fieldname": "cb_branding_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "https://tijaratapp.com",
+   "description": "Any native Navbar Settings help/user menu item currently linking to frappe.io, erpnext.com, or frappecloud.com gets pointed here instead.",
+   "fieldname": "website_url",
+   "fieldtype": "Data",
+   "label": "Website URL"
   },
   {
    "fieldname": "sb_colors",
