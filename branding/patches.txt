@@ -1,0 +1,2 @@
+# Patches for branding
+# Format: module.folder.file_name  (executed in order, top to bottom)
