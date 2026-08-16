@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "autoname": "field:app_name",
+ "creation": "2026-08-17 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "info_html",
+  "enabled",
+  "app_name",
+  "new_title",
+  "last_synced_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "info_html",
+   "fieldtype": "HTML",
+   "options": "<div style=\"font-size: 12px; color: var(--text-muted); line-height: 1.6;\">Rewrites the literal <code>app_title = \"...\"</code> line inside that app's own <code>hooks.py</code> file, on the server's filesystem - not a Translation record. Applies the moment you save, and re-applies automatically after every <code>bench migrate</code> (so a <code>bench update</code> that resets these files gets fixed again on the next migrate, no extra step needed). Only that one line is ever touched - <b>App Name</b> (the internal Python/import identifier every doctype, permission and module reference depends on) is never modified.</div>"
+  },
+  {
+   "default": "1",
+   "description": "Turn this one rule off without deleting it.",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "description": "The app's internal Python name exactly as it appears in sites/apps.txt (e.g. \"frappe\", \"erpnext\", \"hrms\") - never changed, only used to locate that app's hooks.py.",
+   "fieldname": "app_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "App Name (internal, unchanged)",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "What app_title should read instead.",
+   "fieldname": "new_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "New Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "last_synced_status",
+   "fieldtype": "Small Text",
+   "label": "Last Sync Result",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-17 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Branding",
+ "name": "App Title Override",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

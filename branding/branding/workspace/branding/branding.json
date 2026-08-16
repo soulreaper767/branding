@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"br_header\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Branding</b></span>\", \"col\": 12}}, {\"id\": \"br_paragraph\", \"type\": \"paragraph\", \"data\": {\"text\": \"No-code labels, menus, and theme colors - choose what to replace with what, and enable or disable each rule independently.\", \"col\": 12}}, {\"id\": \"br_shortcut_theme\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Theme Settings\", \"col\": 4}}, {\"id\": \"br_shortcut_labels\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Label Override\", \"col\": 4}}, {\"id\": \"br_shortcut_menu\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Menu Override\", \"col\": 4}}]",
+ "content": "[{\"id\": \"br_header\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Branding</b></span>\", \"col\": 12}}, {\"id\": \"br_paragraph\", \"type\": \"paragraph\", \"data\": {\"text\": \"No-code labels, menus, and theme colors - choose what to replace with what, and enable or disable each rule independently.\", \"col\": 12}}, {\"id\": \"br_shortcut_theme\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Theme Settings\", \"col\": 3}}, {\"id\": \"br_shortcut_labels\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Label Override\", \"col\": 3}}, {\"id\": \"br_shortcut_menu\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Menu Override\", \"col\": 3}}, {\"id\": \"br_shortcut_apptitle\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"App Title Override\", \"col\": 3}}]",
  "creation": "2026-08-17 00:00:00.000000",
  "docstatus": 0,
  "doctype": "Workspace",
@@ -51,6 +51,16 @@
    "doc_view": "",
    "stats_filter": "{}",
    "icon": "list"
+  },
+  {
+   "label": "App Title Override",
+   "link_to": "App Title Override",
+   "type": "DocType",
+   "color": "Grey",
+   "format": "",
+   "doc_view": "",
+   "stats_filter": "{}",
+   "icon": "edit"
   }
  ],
  "title": "Branding"

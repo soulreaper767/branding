@@ -22,7 +22,13 @@ web_include_js = "/assets/branding/js/webshop.js"
 # no extra API call.
 boot_session = "branding.branding.boot.boot_session"
 
-# Seeds two starter Label Override rows (ERPNext -> Application Name,
-# Frappe -> Application Name + "OS") and the default Menu Override rows
-# (avatar menu reduced to "Switch to Portal") on a fresh install.
+# Seeds starter Label Override, Menu Override, and App Title Override
+# rows on a fresh install.
 after_install = "branding.branding.install.after_install"
+
+# App Title Override edits app_title directly in another app's own
+# hooks.py, on disk - a `bench update` resets that file back to
+# upstream's own title, so this re-applies every enabled row after every
+# `bench migrate` (which normally follows an update anyway) with no
+# separate manual step required.
+after_migrate = "branding.branding.title_sync.apply_all_app_titles"

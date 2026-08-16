@@ -1,3 +1,4 @@
 # Patches for branding
 # Format: module.folder.file_name  (executed in order, top to bottom)
 branding.patches.v1_0.fix_translation_cache_and_seed_help_menu
+branding.patches.v1_1.seed_expanded_labels_and_app_titles
