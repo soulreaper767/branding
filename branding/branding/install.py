@@ -29,18 +29,17 @@ DEFAULT_LABEL_OVERRIDES = [
 	{"match_text": "HRMS", "replacement_text": "TijaratOS HR"},
 ]
 
-# app_title and app_logo_url are both plain Python constants in each
-# app's own hooks.py, not routed through __() or Website Settings at all
-# - the app switcher / About screen's per-app logo specifically reads
-# app_logo_url, not anything Website Settings drives - which is why both
-# get the direct-file-edit treatment (see App Title Override /
-# title_sync.py). Same Tijarat logo asset for all three, shipped as a
-# static file in this app.
-_LOGO_URL = "/assets/branding/images/tijarat-logo.png"
+# app_title is a plain Python constant in each app's own hooks.py, not
+# routed through __() at all - Label Override can't reach it, which is
+# why it gets the direct-file-edit treatment instead (see
+# App Title Override / title_sync.py). Logo-per-app (app_logo_url) was
+# tried the same way and reverted - it fought with Website Settings'
+# icons instead of the app switcher just getting hidden, which is the
+# simpler fix (see navbar_branding.py / branding.css).
 DEFAULT_APP_TITLE_OVERRIDES = [
-	{"app_name": "frappe", "new_title": "TijaratOS", "new_logo_url": _LOGO_URL},
-	{"app_name": "erpnext", "new_title": "Tijarat", "new_logo_url": _LOGO_URL},
-	{"app_name": "hrms", "new_title": "TijaratOS HR", "new_logo_url": _LOGO_URL},
+	{"app_name": "frappe", "new_title": "TijaratOS"},
+	{"app_name": "erpnext", "new_title": "Tijarat"},
+	{"app_name": "hrms", "new_title": "TijaratOS HR"},
 ]
 
 # The top-right user-avatar dropdown - hidden down to a single item,

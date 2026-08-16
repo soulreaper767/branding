@@ -153,6 +153,25 @@ html[data-branding-theme="on"] [class*="kanban-card"]:hover {
 	transform: translateY(-1px);
 }
 
+/* ---------- App switcher ---------- */
+/* Hides the app-switcher UI (the trigger + its dropdown/panel showing
+   every installed app's own logo - Frappe/ERPNext/HR side by side, which
+   is exactly the inconsistent-branding problem this app exists to avoid).
+   The exact class name isn't pinned down against source the way the rest
+   of this file is, so this is a defensive net of every plausible
+   selector rather than one confirmed one - harmless for any that don't
+   match anything on a given Frappe version. Tell me what you actually
+   see if this doesn't fully catch it and I'll narrow it down. */
+html[data-branding-theme="on"] .app-switcher-dropdown,
+html[data-branding-theme="on"] .app-switcher-menu,
+html[data-branding-theme="on"] .dropdown-app-switcher,
+html[data-branding-theme="on"] [class*="app-switcher"],
+html[data-branding-theme="on"] .sidebar-app-switcher,
+html[data-branding-theme="on"] .apps-switcher,
+html[data-branding-theme="on"] #navbar-apps-switcher {
+	display: none !important;
+}
+
 /* ---------- Charts ---------- */
 /* frappe-charts (the SVG chart library Dashboard Charts/report charts
    use) sets bar/line/slice colors via inline JS, not CSS classes, so

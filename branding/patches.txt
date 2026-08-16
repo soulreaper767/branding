@@ -4,3 +4,4 @@ branding.patches.v1_0.fix_translation_cache_and_seed_help_menu
 branding.patches.v1_1.seed_expanded_labels_and_app_titles
 branding.patches.v1_2.apply_logo_and_navbar_links
 branding.patches.v1_3.set_app_logo_urls
+branding.patches.v1_4.revert_app_logo_urls
