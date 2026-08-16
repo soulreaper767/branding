@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "reference_html",
   "enabled",
   "match_label",
   "column_break_1",
@@ -17,6 +18,11 @@
   "open_in_new_tab"
  ],
  "fields": [
+  {
+   "fieldname": "reference_html",
+   "fieldtype": "HTML",
+   "options": "<div style=\"font-size: 12px; color: var(--text-muted); line-height: 1.8;\"><b>Common labels</b> to use as Match Label below - exact text varies a little by Frappe version, so treat this as a starting point and verify against what you actually see on screen.<br><u>User avatar menu (top right)</u>: <code>My Settings</code> &middot; <code>Toggle Theme</code> &middot; <code>Toggle Full Width</code> &middot; <code>Session Defaults</code> &middot; <code>Reload</code> &middot; <code>View Website</code> &middot; <code>Log out</code><br><u>\"?\" help menu</u>: <code>About</code> &middot; <code>Keyboard Shortcuts</code> &middot; <code>Documentation</code> &middot; <code>Report an Issue</code> &middot; <code>User Forum</code> &middot; <code>Frappe School</code> &middot; <code>Frappe Support</code></div>"
+  },
   {
    "default": "1",
    "description": "Turn this one rule off without deleting it.",

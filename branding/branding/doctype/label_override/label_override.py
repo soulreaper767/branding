@@ -18,11 +18,11 @@ class LabelOverride(Document):
 			_upsert_translation(self.match_text, self.replacement_text)
 		else:
 			_remove_translation(self.match_text)
-		frappe.clear_cache()
+		_clear_translation_cache()
 
 	def on_trash(self):
 		_remove_translation(self.match_text)
-		frappe.clear_cache()
+		_clear_translation_cache()
 
 
 def _upsert_translation(source_text, translated_text):
@@ -52,3 +52,14 @@ def _remove_translation(source_text):
 		return
 	for name in frappe.get_all("Translation", filters={"source_text": source_text}, pluck="name"):
 		frappe.delete_doc("Translation", name, ignore_permissions=True, force=True)
+
+
+def _clear_translation_cache():
+	"""frappe.clear_cache() (the generic one) does NOT touch the
+	translation dict cache or bump the version frappe.boot's translations
+	are cached against - Frappe serves translations to the browser with a
+	one-year cache header, keyed off that version, so without this exact
+	call a Label Override edit is invisible until the version changes some
+	other way. frappe.translate.clear_cache() is the dedicated function
+	that both clears the server-side cache AND bumps that version."""
+	frappe.translate.clear_cache()

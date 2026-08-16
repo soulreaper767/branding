@@ -5,10 +5,20 @@ DEFAULT_LABEL_OVERRIDES = [
 	{"match_text": "Frappe", "replacement_text": "TijaratOS"},
 ]
 
-# The top-right user-avatar dropdown (not the "?" help menu, a separate
-# icon) - hidden down to a single item, "View Website" relabeled to
-# "Switch to Portal".
-DEFAULT_MENU_HIDES = ["My Settings", "Toggle Theme", "Toggle Full Width", "Session Defaults", "Reload", "Log out"]
+# The top-right user-avatar dropdown - hidden down to a single item,
+# "View Website" relabeled to "Switch to Portal". "About" and "Frappe
+# Support" are a different menu (the "?" help icon) but hidden the same
+# way, by exact visible text.
+DEFAULT_MENU_HIDES = [
+	"My Settings",
+	"Toggle Theme",
+	"Toggle Full Width",
+	"Session Defaults",
+	"Reload",
+	"Log out",
+	"About",
+	"Frappe Support",
+]
 DEFAULT_MENU_RELABEL = {"match_label": "View Website", "new_label": "Switch to Portal"}
 
 DEFAULT_CHART_COLORS = ["#4f46e5", "#0ea5e9", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"]

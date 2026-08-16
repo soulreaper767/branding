@@ -58,9 +58,20 @@
 		const overrides = (window.branding && window.branding._menuOverrides) || [];
 		if (!overrides.length) return;
 
-		const candidates = document.querySelectorAll(
-			"a, .sidebar-item, .standard-sidebar-item, .dropdown-item, .workspace-sidebar-item, [data-label]"
-		);
+		// The user-avatar dropdown and the "?" help menu don't render the
+		// same element types - avatar items are consistently <a>/.dropdown-item,
+		// but "About", "Frappe Support" etc. in the help menu can be other
+		// tags (li/div/span) depending on version. The second selector below
+		// widens to every descendant of the two known menu containers, which
+		// is safe despite being broad: matching is still an EXACT textContent
+		// comparison against match_label, so a wrapper element whose text is
+		// several concatenated items just never matches anything.
+		const candidates = new Set([
+			...document.querySelectorAll(
+				"a, .sidebar-item, .standard-sidebar-item, .dropdown-item, .workspace-sidebar-item, [data-label]"
+			),
+			...document.querySelectorAll(".navbar .dropdown-menu *, #help-menu *, .help-dropdown *"),
+		]);
 
 		candidates.forEach((el) => {
 			const text = (el.textContent || "").trim();
